@@ -1,14 +1,17 @@
 {
   "scripts": {
-    "dev": "nodemon ./src/",
-    "build": "webpack",
-    "start": "node ./dist/bundle.js"
+    "dev": "nodemon ./src/index.ts",
+    "start": "ts-node ./src/index.ts"
   },
   "devDependencies": {
+    "@types/getenv": "^1.0.0",
     "nodemon": "^3.0.1",
-    "ts-loader": "^9.4.4",
-    "typescript": "^5.2.2",
-    "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4"
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "mqtt": "^5.0.3",
+    "zod": "^3.22.2"
   }
 }
