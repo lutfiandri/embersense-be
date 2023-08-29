@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "dev": "nodemon ./src/",
+    "build": "webpack",
+    "start": "node ./dist/bundle.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.2.2",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}
