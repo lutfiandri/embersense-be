@@ -9,12 +9,16 @@ require("./routes/telemetry-routes");
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 mqtt_client_1.default.on('connect', () => {
+    console.log(`mqtt connected to ${env_1.default.MqttUrl}`);
     mqtt_client_1.default.subscribe(env_1.default.MqttTopic, (err) => {
         if (!!err) {
             console.error(err);
         }
         console.log(`mqtt connected to ${env_1.default.MqttUrl} on topic ${env_1.default.MqttTopic}`);
     });
+});
+mqtt_client_1.default.on('error', (error) => {
+    console.log('error mqtt', error.message);
 });
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
