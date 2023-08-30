@@ -13,7 +13,9 @@ exports.handleTelemetry = void 0;
 const telemetry_utils_1 = require("./../utils/telemetry-utils");
 const telemetry_repository_1 = require("../repositories/telemetry-repository");
 const handleTelemetry = (rawData) => __awaiter(void 0, void 0, void 0, function* () {
+    console.log('raw data', rawData);
     const telemetry = (0, telemetry_utils_1.parseRawData)(rawData);
+    console.log('telemetry', telemetry);
     try {
         yield (0, telemetry_repository_1.insertTelemetryDataLog)(telemetry);
     }
