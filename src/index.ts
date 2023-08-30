@@ -1,5 +1,6 @@
 import env from './configs/env';
 import mqttClient from './configs/mqtt-client';
+import './routes/telemetry-routes';
 
 mqttClient.on('connect', () => {
   mqttClient.subscribe(env.MqttTopic, (err) => {
@@ -8,9 +9,4 @@ mqttClient.on('connect', () => {
     }
     console.log(`mqtt connected to ${env.MqttUrl} on topic ${env.MqttTopic}`);
   });
-});
-
-mqttClient.on('message', (topic, payload) => {
-  const message = payload.toString();
-  console.log(topic, message);
 });
