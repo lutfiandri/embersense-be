@@ -15,7 +15,7 @@ const firebase_1 = require("../configs/firebase");
 const insertTelemetryDataLog = (telemetryData) => __awaiter(void 0, void 0, void 0, function* () {
     const telemetryLog = Object.assign(Object.assign({}, telemetryData), { createdAt: new Date() });
     const data = telemetry_data_1.TelemetryDataLogDB.parse(telemetryLog);
-    firebase_1.db.collection('telemetry-logs').add(data);
+    yield firebase_1.db.collection('telemetry-logs').add(data);
 });
 exports.insertTelemetryDataLog = insertTelemetryDataLog;
 //# sourceMappingURL=telemetry-repository.js.map

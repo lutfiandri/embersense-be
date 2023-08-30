@@ -14,5 +14,5 @@ export const insertTelemetryDataLog = async (
   };
 
   const data = TelemetryDataLogDB.parse(telemetryLog);
-  db.collection('telemetry-logs').add(data);
+  await db.collection('telemetry-logs').add(data);
 };
