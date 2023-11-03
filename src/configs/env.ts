@@ -4,6 +4,8 @@ import { Env } from '../types/env';
 dotenv.config();
 
 const env: Env = {
+  AppId: process.env.APP_ID || 'c12ember',
+
   MqttUrl: process.env.MQTT_URL || '',
   MqttTopic: process.env.MQTT_TOPIC || '',
 

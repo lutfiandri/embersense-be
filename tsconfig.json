@@ -7,7 +7,7 @@
     "noImplicitAny": true,
     "moduleResolution": "node",
     "sourceMap": true,
-    "strict": true,
+    "strict": false,
     "outDir": "dist"
   },
   "include": ["./src/**/*.ts"]

@@ -1,3 +1,5 @@
+import env from '../configs/env';
+import { Env } from '../types/env';
 import { TelemetryData } from '../types/telemetry-data';
 
 export const parseRawData = (rawData: string): TelemetryData => {
@@ -18,6 +20,15 @@ export const parseRawData = (rawData: string): TelemetryData => {
     };
 
     TelemetryData.parse(telemetryData);
+
+    if (telemetryData?.data?.appId !== env.AppId) {
+      const broken: TelemetryData = {
+        rawData: data,
+        isBroken: true,
+        brokenReason: `received app_id ${telemetryData.data.appId}, it should be ${env.AppId}`,
+      };
+      return broken;
+    }
 
     return telemetryData;
   } catch {
