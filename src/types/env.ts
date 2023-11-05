@@ -2,6 +2,7 @@ import { z } from 'zod';
 
 export const Env = z.object({
   AppId: z.string(),
+  AppPort: z.string(),
 
   MqttUrl: z.string(),
   MqttTopic: z.string(),

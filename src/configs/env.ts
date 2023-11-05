@@ -5,6 +5,7 @@ dotenv.config();
 
 const env: Env = {
   AppId: process.env.APP_ID || 'c12ember',
+  AppPort: process.env.APP_PORT || '80',
 
   MqttUrl: process.env.MQTT_URL || '',
   MqttTopic: process.env.MQTT_TOPIC || '',
