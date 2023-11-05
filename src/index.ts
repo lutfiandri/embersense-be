@@ -1,5 +1,3 @@
-console.log('first');
-
 import env from './configs/env';
 import mqttClient from './configs/mqtt-client';
 import './routes/telemetry-routes';
