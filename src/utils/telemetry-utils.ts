@@ -5,8 +5,8 @@ import { TelemetryData } from '../types/telemetry-data';
 export const parseRawData = (rawData: string): TelemetryData => {
   // format raw data
   // APP_ID,SENSOR_ID,PACKET_COUNT\n
-  const data = rawData.trim();
-  const arr = data.split(',');
+  const data = rawData?.trim();
+  const arr = data?.split(',');
 
   try {
     const telemetryData: TelemetryData = {
