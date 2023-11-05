@@ -27,4 +27,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => res.send('welcome to embersense'));
 
-app.listen(5000, () => console.log('server started'));
+app.listen(env.AppPort, () =>
+  console.log('server started on port', env.AppPort)
+);
