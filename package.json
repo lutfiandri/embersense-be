@@ -1,7 +1,9 @@
 {
   "scripts": {
     "dev": "nodemon ./src/index.ts",
-    "start": "ts-node ./src/index.ts"
+    "start": "ts-node ./src/index.ts",
+    "dev:bun": "bun --watch ./src/index.ts",
+    "start:bun": "bun ./src/index.ts"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",
