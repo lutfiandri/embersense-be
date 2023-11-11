@@ -3,7 +3,7 @@ import { upsertSensor } from '../repositories/sensor-repository';
 
 export const handleTelemetry = async (rawData: string): Promise<void> => {
   try {
-    console.log('[DATA]', rawData?.trim());
+    console.log('[DATA]', JSON.stringify(rawData?.trim()));
     const telemetry = parseRawData(rawData);
     if (telemetry.isBroken) {
       throw new Error(telemetry.brokenReason);

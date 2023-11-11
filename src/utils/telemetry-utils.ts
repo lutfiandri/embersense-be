@@ -25,7 +25,9 @@ export const parseRawData = (rawData: string): TelemetryData => {
     const telemetryData: TelemetryData = {
       rawData: data,
       isBroken: true,
-      brokenReason: `can't parse '${data}' to 'SENSOR_ID,PACKET_COUNT' format`,
+      brokenReason: `[DATA ERROR] can't parse ${JSON.stringify(
+        data
+      )} to "SENSOR_ID,PACKET_COUNT" format`,
     };
     return telemetryData;
   }
