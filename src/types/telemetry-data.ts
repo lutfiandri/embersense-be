@@ -6,7 +6,6 @@ export const TelemetryData = z.object({
   brokenReason: z.string().optional(),
   data: z
     .object({
-      appId: z.string().length(8),
       sensorId: z.string().length(8),
       packetCount: z.number().int().gt(0),
     })
