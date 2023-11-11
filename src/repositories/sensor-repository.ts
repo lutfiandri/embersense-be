@@ -9,8 +9,8 @@ export const upsertSensor = async (data: TelemetryData): Promise<void> => {
   const id = data?.data.sensorId as string;
 
   const sensor: Sensor = {
-    updatedAt: now,
     lastPacketCount: data.data?.packetCount as number,
+    lastPacketAt: now,
   };
 
   if (!data.isBroken) {

@@ -7,6 +7,7 @@ export const Sensor = z.object({
   createdAt: z.date(),
   updatedAt: z.date(),
   lastPacketCount: z.number(),
+  lastPacketAt: z.date(),
 });
 
 export type Sensor = z.infer<typeof Sensor>;
