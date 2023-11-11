@@ -7,12 +7,18 @@ import cors from 'cors';
 
 mqttClient.on('connect', () => {
   console.log(`mqtt connected to ${env.MqttUrl}`);
-  mqttClient.subscribe(env.MqttTopic, (err) => {
-    if (!!err) {
-      console.error(err);
+  mqttClient.subscribe(
+    env.MqttTopic,
+    {
+      qos: 1,
+    },
+    (err) => {
+      if (!!err) {
+        console.error(err);
+      }
+      console.log(`mqtt connected to ${env.MqttUrl} on topic ${env.MqttTopic}`);
     }
-    console.log(`mqtt connected to ${env.MqttUrl} on topic ${env.MqttTopic}`);
-  });
+  );
 });
 
 mqttClient.on('error', (error) => {

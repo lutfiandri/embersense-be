@@ -5,6 +5,8 @@ export const Env = z.object({
   AppPort: z.string(),
 
   MqttUrl: z.string(),
+  MqttUsername: z.string(),
+  MqttPassword: z.string(),
   MqttTopic: z.string(),
 
   FirebaseType: z.string(),

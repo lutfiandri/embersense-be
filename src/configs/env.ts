@@ -8,6 +8,8 @@ const env: Env = {
   AppPort: process.env.APP_PORT || '80',
 
   MqttUrl: process.env.MQTT_URL || '',
+  MqttUsername: process.env.MQTT_USERNAME || '',
+  MqttPassword: process.env.MQTT_PASSWORD || '',
   MqttTopic: process.env.MQTT_TOPIC || '',
 
   FirebaseType: process.env.FIREBASE_TYPE || '',
